@@ -1,14 +1,15 @@
 import Header from "../components/Header";
 import Main from "../components/Main";
 import Footer from "../components/Footer";
+import Wrapper from "../components/ui/wrapper";
 
 function Cart() {
   return (
-    <div className="flex h-[calc(100vh)] flex-col">
+    <Wrapper>
       <Header />
       <Main children={"Cart page"} />
       <Footer />
-    </div>
+    </Wrapper>
   );
 }
 
