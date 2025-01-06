@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 const Header = () => {
   return (
     <header className="mx-auto flex w-full max-w-[1024px] flex-wrap items-center justify-between gap-8 p-8">
-      <h1 className="text-4xl font-bold">
+      <h1 className="text-3xl font-bold">
         <Link to="/" className="rounded-sm border-2 border-black">
           <span className="bg-black text-white">&nbsp;fake&nbsp;</span>
           &nbsp;STORE&nbsp;
@@ -30,7 +30,7 @@ const Header = () => {
         </ul>
       </nav>
 
-      <div className="order-1 flex min-w-full flex-1 items-center md:min-w-[200px] md:max-w-[320px]">
+      <div className="order-1 flex min-w-full flex-1 items-center md:min-w-[200px] md:max-w-[300px]">
         <Input
           className="rounded-r-none transition-none hover:border hover:border-black focus-visible:ring-transparent"
           type="text"

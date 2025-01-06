@@ -7,7 +7,7 @@ function Cart() {
   return (
     <Wrapper>
       <Header />
-      <Main children={"Cart page"} />
+      <Main>Cart page</Main>
       <Footer />
     </Wrapper>
   );

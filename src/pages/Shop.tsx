@@ -7,7 +7,29 @@ function Shop() {
   return (
     <Wrapper>
       <Header />
-      <Main children={"Shop page"} />
+      <Main>
+        <div className="grid grid-cols-[repeat(auto-fill,minmax(200px,1fr))] content-start gap-8">
+          <div className="min-h-[300px] min-w-[200px] bg-gray-500"></div>
+          <div className="min-h-[300px] min-w-[200px] bg-gray-500"></div>
+          <div className="min-h-[300px] min-w-[200px] bg-gray-500"></div>
+          <div className="min-h-[300px] min-w-[200px] bg-gray-500"></div>
+
+          <div className="min-h-[300px] min-w-[200px] bg-gray-500"></div>
+          <div className="min-h-[300px] min-w-[200px] bg-gray-500"></div>
+          <div className="min-h-[300px] min-w-[200px] bg-gray-500"></div>
+          <div className="min-h-[300px] min-w-[200px] bg-gray-500"></div>
+
+          <div className="min-h-[300px] min-w-[200px] bg-gray-500"></div>
+          <div className="min-h-[300px] min-w-[200px] bg-gray-500"></div>
+          <div className="min-h-[300px] min-w-[200px] bg-gray-500"></div>
+          <div className="min-h-[300px] min-w-[200px] bg-gray-500"></div>
+
+          <div className="min-h-[300px] min-w-[200px] bg-gray-500"></div>
+          <div className="min-h-[300px] min-w-[200px] bg-gray-500"></div>
+          <div className="min-h-[300px] min-w-[200px] bg-gray-500"></div>
+          <div className="min-h-[300px] min-w-[200px] bg-gray-500"></div>
+        </div>
+      </Main>
       <Footer />
     </Wrapper>
   );
