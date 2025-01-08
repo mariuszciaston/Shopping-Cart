@@ -8,7 +8,7 @@ const Header = () => {
   return (
     <header className="mx-auto flex w-full max-w-[1024px] flex-wrap items-center justify-between gap-8 p-8">
       <h1 className="text-3xl font-bold">
-        <Link to="/" className="rounded-sm border-2 border-black">
+        <Link to="/" className="rounded-md border-2 border-black">
           <span className="bg-black text-white">&nbsp;fake&nbsp;</span>
           &nbsp;STORE&nbsp;
         </Link>

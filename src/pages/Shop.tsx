@@ -2,32 +2,36 @@ import Header from "../components/Header";
 import Main from "../components/Main";
 import Footer from "../components/Footer";
 import Wrapper from "@/components/ui/wrapper";
+import useProductsData from "@/hooks/fetchAllProducts";
 
 function Shop() {
+  const { productsData, error, loading } = useProductsData();
+
   return (
     <Wrapper>
       <Header />
       <Main>
-        <div className="grid grid-cols-[repeat(auto-fill,minmax(200px,1fr))] content-start gap-8">
-          <div className="min-h-[300px] min-w-[200px] bg-gray-500"></div>
-          <div className="min-h-[300px] min-w-[200px] bg-gray-500"></div>
-          <div className="min-h-[300px] min-w-[200px] bg-gray-500"></div>
-          <div className="min-h-[300px] min-w-[200px] bg-gray-500"></div>
+        {loading && <p>Loading...</p>}
+        {error && <p>A network error was encountered</p>}
 
-          <div className="min-h-[300px] min-w-[200px] bg-gray-500"></div>
-          <div className="min-h-[300px] min-w-[200px] bg-gray-500"></div>
-          <div className="min-h-[300px] min-w-[200px] bg-gray-500"></div>
-          <div className="min-h-[300px] min-w-[200px] bg-gray-500"></div>
+        <div className="grid grid-cols-[repeat(auto-fill,minmax(240px,1fr))] content-start gap-8">
+          {productsData &&
+            productsData.map((product) => (
+              <div
+                key={product.id}
+                className="flex flex-col gap-4 rounded-md bg-white p-4 shadow-md hover:cursor-pointer"
+              >
+                <img
+                  src={product.image}
+                  alt={product.title}
+                  className="aspect-square bg-white object-contain"
+                />
 
-          <div className="min-h-[300px] min-w-[200px] bg-gray-500"></div>
-          <div className="min-h-[300px] min-w-[200px] bg-gray-500"></div>
-          <div className="min-h-[300px] min-w-[200px] bg-gray-500"></div>
-          <div className="min-h-[300px] min-w-[200px] bg-gray-500"></div>
+                <h2 className="font-bold">{product.title}</h2>
 
-          <div className="min-h-[300px] min-w-[200px] bg-gray-500"></div>
-          <div className="min-h-[300px] min-w-[200px] bg-gray-500"></div>
-          <div className="min-h-[300px] min-w-[200px] bg-gray-500"></div>
-          <div className="min-h-[300px] min-w-[200px] bg-gray-500"></div>
+                <p>${product.price}</p>
+              </div>
+            ))}
         </div>
       </Main>
       <Footer />
