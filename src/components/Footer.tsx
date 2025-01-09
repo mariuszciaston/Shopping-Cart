@@ -1,6 +1,6 @@
 const Footer = () => {
   return (
-    <footer className="mx-auto flex w-full max-w-[1024px] items-center justify-center p-8 text-sm">
+    <footer className="mx-auto flex w-full max-w-[1280px] items-center justify-center p-8 text-sm">
       Mariusz Ciastoń 2025 &nbsp;
       <a
         href="https://github.com/mariuszciaston/"
