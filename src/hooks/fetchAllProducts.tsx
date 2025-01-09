@@ -1,9 +1,8 @@
-import { Product } from "@/types";
+import { ProductTypes } from "@/types";
 import { useState, useEffect } from "react";
 
 const useProductsData = () => {
-  const [productsData, setProductsData] = useState<Product[] | null>(null);
-
+  const [productsData, setProductsData] = useState<ProductTypes[] | null>(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
 
