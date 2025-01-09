@@ -4,8 +4,13 @@ import Footer from "../components/Footer";
 import Wrapper from "../components/ui/wrapper";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { useProductsContext } from "@/context/ProductContext";
+import RenderProducts from "@/components/RenderProducts";
 
 function Home() {
+  const { productsData, error, loading } = useProductsContext();
+  const newProductsData = productsData ? productsData.slice(0, 4) : [];
+
   return (
     <Wrapper>
       <Header />
@@ -33,12 +38,11 @@ function Home() {
 
           <h2 className="text-2xl font-bold">Featured Items</h2>
 
-          <div className="grid grid-cols-[repeat(auto-fill,minmax(200px,1fr))] content-start gap-8">
-            <div className="min-h-[300px] min-w-[200px] bg-gray-500"></div>
-            <div className="min-h-[300px] min-w-[200px] bg-gray-500"></div>
-            <div className="min-h-[300px] min-w-[200px] bg-gray-500"></div>
-            <div className="min-h-[300px] min-w-[200px] bg-gray-500"></div>
-          </div>
+          <RenderProducts
+            productsData={newProductsData}
+            error={error}
+            loading={loading}
+          />
         </div>
       </Main>
       <Footer />
