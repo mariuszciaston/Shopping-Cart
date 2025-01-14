@@ -31,7 +31,7 @@ function Home() {
                 className="mx-auto bg-green-500 px-8 py-6 text-lg font-bold hover:bg-green-500"
                 variant="default"
               >
-                <Link to="/shop">Shop Now</Link>
+                <Link to="/products">Shop Now</Link>
               </Button>
             </div>
           </div>

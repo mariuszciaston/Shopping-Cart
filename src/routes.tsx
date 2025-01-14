@@ -1,5 +1,5 @@
 import Home from "./pages/Home.tsx";
-import Shop from "./pages/Shop";
+import Products from "./pages/Products.tsx";
 import Cart from "./pages/Cart";
 import ErrorPage from "./pages/ErrorPage.tsx";
 
@@ -10,8 +10,8 @@ const router = [
     errorElement: <ErrorPage />,
   },
   {
-    path: "shop",
-    element: <Shop />,
+    path: "products",
+    element: <Products />,
   },
   {
     path: "cart",

@@ -5,7 +5,7 @@ import Wrapper from "@/components/ui/wrapper";
 import { useProductsContext } from "@/context/ProductContext";
 import RenderProducts from "@/components/RenderProducts";
 
-function Shop() {
+function Products() {
   const { productsData, error, loading } = useProductsContext();
 
   return (
@@ -23,4 +23,4 @@ function Shop() {
   );
 }
 
-export default Shop;
+export default Products;
