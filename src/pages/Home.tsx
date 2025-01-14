@@ -9,7 +9,7 @@ import RenderProducts from "@/components/RenderProducts";
 
 function Home() {
   const { productsData, error, loading } = useProductsContext();
-  const newProductsData = productsData ? productsData.slice(0, 4) : [];
+  const featuredProductsData = productsData ? productsData.slice(0, 4) : [];
 
   return (
     <Wrapper>
@@ -39,7 +39,7 @@ function Home() {
           <h2 className="text-2xl font-bold">Featured Items</h2>
 
           <RenderProducts
-            productsData={newProductsData}
+            productsData={featuredProductsData}
             error={error}
             loading={loading}
           />
