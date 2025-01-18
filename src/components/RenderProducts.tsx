@@ -15,15 +15,13 @@ const RenderProducts: React.FC<ProductsContextType> = ({
         {productsData &&
           productsData.map((product) => (
             <Link to={`/products/${product.id}`} key={product.id}>
-              <div className="flex flex-col gap-4 rounded-md bg-white p-4 shadow-md">
+              <div className="flex h-full flex-col gap-4 rounded-md bg-white p-4 shadow-md">
                 <img
                   src={product.image}
                   alt={product.title}
                   className="aspect-square bg-white object-contain"
                 />
-
                 <h2 className="font-bold">{product.title}</h2>
-
                 <p>${product.price}</p>
               </div>
             </Link>
