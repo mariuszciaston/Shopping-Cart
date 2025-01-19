@@ -5,7 +5,7 @@ import Wrapper from "../components/ui/wrapper";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { useProductsContext } from "@/context/ProductContext";
-import RenderProducts from "@/components/RenderProducts";
+import RenderMultipleProducts from "@/components/RenderMultipleProducts";
 
 function Home() {
   const { productsData, error, loading } = useProductsContext();
@@ -38,7 +38,7 @@ function Home() {
 
           <h2 className="text-2xl font-bold">Featured Items</h2>
 
-          <RenderProducts
+          <RenderMultipleProducts
             productsData={featuredProductsData}
             error={error}
             loading={loading}

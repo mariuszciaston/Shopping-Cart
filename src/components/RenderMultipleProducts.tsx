@@ -1,7 +1,7 @@
 import { ProductsContextType } from "@/types";
 import { Link } from "react-router-dom";
 
-const RenderProducts: React.FC<ProductsContextType> = ({
+const RenderMultipleProducts: React.FC<ProductsContextType> = ({
   productsData,
   error,
   loading,
@@ -31,4 +31,4 @@ const RenderProducts: React.FC<ProductsContextType> = ({
   );
 };
 
-export default RenderProducts;
+export default RenderMultipleProducts;

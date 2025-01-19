@@ -3,7 +3,7 @@ import Main from "../components/Main";
 import Footer from "../components/Footer";
 import Wrapper from "@/components/ui/wrapper";
 import { useProductsContext } from "@/context/ProductContext";
-import RenderProducts from "@/components/RenderProducts";
+import RenderMultipleProducts from "@/components/RenderMultipleProducts";
 
 function Products() {
   const { productsData, error, loading } = useProductsContext();
@@ -12,7 +12,7 @@ function Products() {
     <Wrapper>
       <Header />
       <Main>
-        <RenderProducts
+        <RenderMultipleProducts
           productsData={productsData}
           error={error}
           loading={loading}
