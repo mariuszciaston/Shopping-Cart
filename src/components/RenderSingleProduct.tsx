@@ -1,12 +1,18 @@
 import { ProductsContextType } from "@/types";
 import { Button } from "./ui/button";
-import { Input } from "./ui/input";
+import QuantitySelector from "./QuantitySelector";
 
-const RenderProducts: React.FC<ProductsContextType> = ({
+const RenderSingleProduct: React.FC<ProductsContextType> = ({
   productsData,
   error,
   loading,
 }) => {
+  // const [items, setItems] = useState({});
+
+  const handleAddToCart = () => {
+    console.log("Add to cart");
+  };
+
   return (
     <>
       {loading && <p>Loading...</p>}
@@ -28,25 +34,10 @@ const RenderProducts: React.FC<ProductsContextType> = ({
               <p>{product.description}</p>
               <p>${product.price}</p>
 
-              <div className="mr-auto flex gap-2">
-                <Button className="text-lg" variant="outline">
-                  -
-                </Button>
-
-                <Input
-                  className="m-none w-[4rem] pr-0 text-center"
-                  type="number"
-                  min="1"
-                  max="99"
-                  value={1}
-                ></Input>
-
-                <Button className="text-lg" variant="outline">
-                  +
-                </Button>
-              </div>
+              <QuantitySelector />
 
               <Button
+                onClick={handleAddToCart}
                 className="mr-auto bg-blue-500 px-8 py-6 text-lg font-bold hover:bg-blue-500"
                 variant="default"
               >
@@ -59,4 +50,4 @@ const RenderProducts: React.FC<ProductsContextType> = ({
   );
 };
 
-export default RenderProducts;
+export default RenderSingleProduct;
