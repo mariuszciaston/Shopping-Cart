@@ -1,10 +1,11 @@
+import { QuantitySelectorProps } from "@/types";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
-import { useState } from "react";
 
-const QuantitySelector: React.FC = () => {
-  const [quantity, setQuantity] = useState(1);
-
+const QuantitySelector: React.FC<QuantitySelectorProps> = ({
+  quantity,
+  setQuantity,
+}) => {
   const handleIncrement = () => {
     if (quantity < 99) {
       setQuantity(!isNaN(quantity) ? quantity + 1 : 1);

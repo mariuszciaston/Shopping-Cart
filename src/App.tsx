@@ -1,6 +1,6 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import routes from "./routes";
-import useProductsData from "@/hooks/fetchAllProducts";
+import useProductsData from "@/hooks/useProductsData";
 import { ProductsContext } from "./context/ProductContext";
 
 const router = createBrowserRouter(routes);

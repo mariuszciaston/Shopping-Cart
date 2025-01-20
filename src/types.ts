@@ -11,3 +11,13 @@ export type ProductsContextType = {
   error: null;
   loading: boolean;
 };
+
+export type QuantitySelectorProps = {
+  quantity: number;
+  setQuantity: (quantity: number) => void;
+};
+
+export type CartItem = {
+  id: number;
+  quantity: number;
+};

@@ -1,16 +1,40 @@
-import { ProductsContextType } from "@/types";
+import { CartItem, ProductsContextType } from "@/types";
 import { Button } from "./ui/button";
 import QuantitySelector from "./QuantitySelector";
+import { useState } from "react";
 
 const RenderSingleProduct: React.FC<ProductsContextType> = ({
   productsData,
   error,
   loading,
 }) => {
-  // const [items, setItems] = useState({});
+  const [quantity, setQuantity] = useState(1);
+  const [itemsInCart, setItemsInCart] = useState<CartItem[]>([]);
 
-  const handleAddToCart = () => {
+  const handleAddToCart = (
+    id: CartItem["id"],
+    quantity: CartItem["quantity"],
+  ) => {
+    const existingItemIndex = itemsInCart.findIndex((item) => item.id === id);
+
+    if (existingItemIndex !== -1) {
+      const updatedCart = [...itemsInCart];
+      updatedCart[existingItemIndex].quantity += quantity;
+      setItemsInCart(updatedCart);
+    } else {
+      setItemsInCart([
+        ...itemsInCart,
+        {
+          id: id,
+          quantity: quantity,
+        },
+      ]);
+    }
+
     console.log("Add to cart");
+    console.log("id: ", id);
+    console.log("quantity: ", quantity);
+    console.log(itemsInCart);
   };
 
   return (
@@ -34,10 +58,10 @@ const RenderSingleProduct: React.FC<ProductsContextType> = ({
               <p>{product.description}</p>
               <p>${product.price}</p>
 
-              <QuantitySelector />
+              <QuantitySelector quantity={quantity} setQuantity={setQuantity} />
 
               <Button
-                onClick={handleAddToCart}
+                onClick={() => handleAddToCart(product.id, quantity)}
                 className="mr-auto bg-blue-500 px-8 py-6 text-lg font-bold hover:bg-blue-500"
                 variant="default"
               >
