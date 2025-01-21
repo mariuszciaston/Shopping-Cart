@@ -21,3 +21,8 @@ export type CartItem = {
   id: number;
   quantity: number;
 };
+
+export type CartContextType = {
+  itemsInCart: CartItem[];
+  setItemsInCart: React.Dispatch<React.SetStateAction<CartItem[]>>;
+};

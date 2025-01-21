@@ -3,13 +3,28 @@ import Main from "../components/Main";
 import Footer from "../components/Footer";
 import Wrapper from "../components/ui/wrapper";
 import { Button } from "@/components/ui/button";
+import { useCartContext } from "@/context/CartContext";
 
 function Cart() {
+  const { itemsInCart } = useCartContext();
+
   return (
     <Wrapper>
       <Header />
       <Main>
         <div className="flex flex-col gap-8 rounded-md bg-white p-8 shadow-md">
+         
+          {itemsInCart.length === 0 ? (
+            <div>Empty cart</div>
+          ) : (
+            itemsInCart.map((item) => (
+              <div key={item.id}>
+                <p>id: {item.id}</p>
+                <p>quantity: {item.quantity}</p>
+              </div>
+            ))
+          )}
+
           <div className="flex justify-between">
             <div>image</div>
 

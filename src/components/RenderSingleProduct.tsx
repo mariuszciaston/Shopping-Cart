@@ -2,6 +2,7 @@ import { CartItem, ProductsContextType } from "@/types";
 import { Button } from "./ui/button";
 import QuantitySelector from "./QuantitySelector";
 import { useState } from "react";
+import { useCartContext } from "@/context/CartContext";
 
 const RenderSingleProduct: React.FC<ProductsContextType> = ({
   productsData,
@@ -9,7 +10,7 @@ const RenderSingleProduct: React.FC<ProductsContextType> = ({
   loading,
 }) => {
   const [quantity, setQuantity] = useState(1);
-  const [itemsInCart, setItemsInCart] = useState<CartItem[]>([]);
+  const { itemsInCart, setItemsInCart } = useCartContext();
 
   const handleAddToCart = (
     id: CartItem["id"],
