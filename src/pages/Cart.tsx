@@ -80,7 +80,19 @@ function Cart() {
           <div className="flex justify-between">
             <div className="text-lg font-bold">Total &nbsp;</div>
 
-            <div className="text-lg font-bold">$10.00</div>
+            <div className="text-lg font-bold">
+              $
+              {itemsInCart
+                .reduce(
+                  (acc, item) =>
+                    acc +
+                    item.quantity *
+                      (productsData?.find((product) => product.id === item.id)
+                        ?.price ?? 0),
+                  0,
+                )
+                .toFixed(2)}
+            </div>
           </div>
 
           <Button
