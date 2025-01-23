@@ -3,10 +3,15 @@ import { Search } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ShoppingBasket } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useCartContext } from "@/context/CartContext";
 
 const Header = () => {
+  const { itemsInCart } = useCartContext();
+
+  console.log(itemsInCart);
+
   return (
-    <header className="mx-auto flex w-full max-w-[1280px] flex-wrap items-center justify-between gap-4 p-4 sm:p-8 sm:gap-8">
+    <header className="mx-auto flex w-full max-w-[1280px] flex-wrap items-center justify-between gap-4 p-4 sm:gap-8 sm:p-8">
       <h1 className="text-3xl font-bold">
         <Link to="/" className="rounded-md border-2 border-black">
           <span className="bg-black text-white">&nbsp;fake&nbsp;</span>
@@ -24,7 +29,14 @@ const Header = () => {
           </li>
           <li>
             <Link to="/cart">
-              <ShoppingBasket className="h-8 w-8" />
+              <div className="relative">
+                <ShoppingBasket className="h-8 w-8" />
+                {itemsInCart.length > 0 && (
+                  <span className="absolute -bottom-1 -right-1 flex h-5 min-w-5 items-center justify-center rounded-full bg-red-500 text-xs text-white">
+                    {itemsInCart.reduce((acc, item) => acc + item.quantity, 0)}
+                  </span>
+                )}
+              </div>
             </Link>
           </li>
         </ul>
