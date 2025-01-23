@@ -7,6 +7,7 @@ import { useProductsContext } from "@/context/ProductContext";
 import { useCartContext } from "@/context/CartContext";
 import { Trash2 } from "lucide-react";
 import QuantitySelector from "@/components/QuantitySelector";
+import { Link } from "react-router-dom";
 
 function Cart() {
   const { productsData, error, loading } = useProductsContext();
@@ -32,15 +33,20 @@ function Cart() {
                 <div key={product.id}>
                   <div className="flex flex-1 flex-wrap items-center justify-between gap-4">
                     <div className="flex items-center gap-4 sm:min-w-[480px] sm:flex-1">
-                      <img
-                        src={product.image}
-                        alt={product.title}
-                        className="aspect-square w-32 min-w-32 rounded-md border bg-white object-contain p-4"
-                      />
-                      <p className="flex flex-col">
-                        <span className="font-bold">{product.title}</span>$
-                        {product.price}
-                      </p>
+                      <Link to={`/products/${product.id}`}>
+                        <img
+                          src={product.image}
+                          alt={product.title}
+                          className="aspect-square w-32 min-w-32 rounded-md border bg-white object-contain p-4"
+                        />
+                      </Link>
+
+                      <Link to={`/products/${product.id}`}>
+                        <p className="flex flex-col">
+                          <span className="font-bold">{product.title}</span>$
+                          {product.price}
+                        </p>
+                      </Link>
                     </div>
 
                     <div className="flex flex-1 items-center gap-4">
