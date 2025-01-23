@@ -8,8 +8,6 @@ import { useCartContext } from "@/context/CartContext";
 const Header = () => {
   const { itemsInCart } = useCartContext();
 
-  console.log(itemsInCart);
-
   return (
     <header className="mx-auto flex w-full max-w-[1280px] flex-wrap items-center justify-between gap-4 p-4 sm:gap-8 sm:p-8">
       <h1 className="text-3xl font-bold">

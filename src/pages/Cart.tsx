@@ -11,7 +11,7 @@ import { Link } from "react-router-dom";
 
 function Cart() {
   const { productsData, error, loading } = useProductsContext();
-  const { itemsInCart } = useCartContext();
+  const { itemsInCart, setItemsInCart } = useCartContext();
 
   return (
     <Wrapper>
@@ -55,12 +55,25 @@ function Cart() {
                           itemsInCart.find((item) => item.id === product.id)
                             ?.quantity ?? 0
                         }
-                        setQuantity={(quantity: number) => {
-                          console.log("New quantity:", quantity);
+                        setQuantity={(newQuantity) => {
+                          const updatedCart = itemsInCart.map((item) =>
+                            item.id === product.id
+                              ? { ...item, quantity: newQuantity }
+                              : item,
+                          );
+                          setItemsInCart(updatedCart);
                         }}
                       />
 
-                      <Trash2 />
+                      <Trash2
+                        className="cursor-pointer hover:text-red-500"
+                        onClick={() => {
+                          const updatedCart = itemsInCart.filter(
+                            (item) => item.id !== product.id,
+                          );
+                          setItemsInCart(updatedCart);
+                        }}
+                      />
 
                       <p className="flex flex-1 justify-end">
                         $
