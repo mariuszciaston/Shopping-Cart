@@ -31,7 +31,7 @@ const QuantitySelector: React.FC<QuantitySelectorProps> = ({
   };
 
   return (
-    <div className="mr-auto flex gap-2">
+    <div className="flex gap-2">
       <Button className="text-lg" variant="outline" onClick={handleDecrement}>
         -
       </Button>

@@ -31,11 +31,6 @@ const RenderSingleProduct: React.FC<ProductsContextType> = ({
         },
       ]);
     }
-
-    console.log("Add to cart");
-    console.log("id: ", id);
-    console.log("quantity: ", quantity);
-    console.log(itemsInCart);
   };
 
   return (
