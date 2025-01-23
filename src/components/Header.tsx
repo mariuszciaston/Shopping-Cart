@@ -1,6 +1,3 @@
-import { Input } from "@/components/ui/input";
-import { Search } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { ShoppingBasket } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useCartContext } from "@/context/CartContext";
@@ -39,21 +36,6 @@ const Header = () => {
           </li>
         </ul>
       </nav>
-
-      <div className="order-1 flex min-w-full flex-1 items-center md:min-w-[200px] md:max-w-[300px]">
-        <Input
-          className="rounded-r-none transition-none hover:border hover:border-black focus-visible:ring-transparent"
-          type="text"
-          placeholder="Search"
-        />
-
-        <Button
-          className="hover:border-1 rounded-l-none transition-none hover:border hover:border-black hover:bg-white"
-          variant="outline"
-        >
-          <Search />
-        </Button>
-      </div>
     </header>
   );
 };
