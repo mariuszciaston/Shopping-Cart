@@ -16,7 +16,7 @@ function Home() {
       <Header />
       <Main>
         <div className="flex flex-col gap-8">
-          <div className="flex flex-col gap-8 rounded-md bg-white px-8 py-16 text-center shadow-md">
+          <div className="flex flex-col gap-8 rounded-md bg-white px-4 py-8 text-center shadow-md sm:px-8 sm:py-16">
             <div className="mx-auto flex max-w-[640px] flex-col gap-8">
               <h1 className="text-4xl font-bold">
                 Your Ultimate Shopping Hub{" "}
@@ -36,7 +36,7 @@ function Home() {
             </div>
           </div>
 
-          <h2 className="text-2xl font-bold">Featured Items</h2>
+          <h2 className="px-4 text-2xl font-bold sm:px-0">Featured Items</h2>
 
           <RenderMultipleProducts
             productsData={featuredProductsData}

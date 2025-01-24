@@ -11,7 +11,7 @@ const RenderMultipleProducts: React.FC<ProductsContextType> = ({
       {loading && <p>Loading...</p>}
       {error && <p>A network error was encountered</p>}
 
-      <div className="grid grid-cols-[repeat(auto-fill,minmax(240px,1fr))] content-start gap-8">
+      <div className="grid grid-cols-[repeat(auto-fill,minmax(240px,1fr))] content-start gap-4 sm:gap-8">
         {productsData &&
           productsData.map((product) => (
             <Link to={`/products/${product.id}`} key={product.id}>
