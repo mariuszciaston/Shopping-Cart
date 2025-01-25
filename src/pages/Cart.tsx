@@ -111,9 +111,13 @@ function Cart() {
           <Button
             className="mx-auto bg-blue-500 px-8 py-6 text-lg font-bold hover:bg-blue-500"
             variant="default"
-            onClick={() =>
-              alert(`Congratulations! You successfully bought the products.`)
-            }
+            onClick={() => {
+              if (itemsInCart.length > 0) {
+                alert(`Congratulations! You successfully bought the products.`);
+              } else {
+                alert("Cart is empty. Please add items before checking out.");
+              }
+            }}
           >
             Checkout
           </Button>
