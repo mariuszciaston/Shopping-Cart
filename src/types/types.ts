@@ -26,3 +26,10 @@ export type CartContextType = {
   itemsInCart: CartItem[];
   setItemsInCart: React.Dispatch<React.SetStateAction<CartItem[]>>;
 };
+
+export type AddToCartHandler = (
+  id: CartItem["id"],
+  quantity: CartItem["quantity"],
+  itemsInCart: CartItem[],
+  setItemsInCart: React.Dispatch<React.SetStateAction<CartItem[]>>,
+) => void;

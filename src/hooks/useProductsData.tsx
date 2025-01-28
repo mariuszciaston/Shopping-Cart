@@ -1,4 +1,4 @@
-import { ProductTypes } from "@/types";
+import { ProductTypes } from "@/types/types";
 import { useState, useEffect } from "react";
 
 const useProductsData = () => {

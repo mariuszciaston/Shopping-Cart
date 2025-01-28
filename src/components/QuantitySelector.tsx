@@ -1,6 +1,6 @@
-import { QuantitySelectorProps } from "@/types";
-import { Button } from "./ui/button";
-import { Input } from "./ui/input";
+import { QuantitySelectorProps } from "@/types/types";
+import { Button } from "./Button";
+import { Input } from "./Input";
 
 const QuantitySelector: React.FC<QuantitySelectorProps> = ({
   quantity,

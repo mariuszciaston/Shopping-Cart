@@ -1,4 +1,4 @@
-import { CartContextType } from "@/types";
+import { CartContextType } from "@/types/types";
 import { createContext, useContext } from "react";
 
 export const CartContext = createContext<CartContextType | null>(null);

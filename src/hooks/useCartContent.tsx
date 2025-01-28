@@ -1,4 +1,4 @@
-import { CartItem } from "@/types";
+import { CartItem } from "@/types/types";
 import { useState } from "react";
 
 const useCartContent = () => {

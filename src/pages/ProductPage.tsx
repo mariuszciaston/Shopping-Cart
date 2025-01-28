@@ -1,16 +1,16 @@
 import Header from "../components/Header";
 import Main from "../components/Main";
 import Footer from "../components/Footer";
-import Wrapper from "@/components/ui/wrapper";
+import Wrapper from "@/components/Wrapper";
 
 import { useParams } from "react-router-dom";
 import ErrorPage from "./ErrorPage";
 
 import { useProductsContext } from "@/context/ProductContext";
 import RenderSingleProduct from "@/components/RenderSingleProduct";
-import { ProductTypes } from "@/types";
+import { ProductTypes } from "@/types/types";
 
-function Products() {
+function ProductPage() {
   const { productsData, error, loading } = useProductsContext();
 
   const { name } = useParams();
@@ -41,4 +41,4 @@ function Products() {
   );
 }
 
-export default Products;
+export default ProductPage;

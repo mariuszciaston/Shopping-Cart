@@ -1,9 +1,9 @@
-import { ProductsContextType } from "@/types";
-import { Button } from "./ui/button";
+import { ProductsContextType } from "@/types/types";
+import { Button } from "./Button";
 import QuantitySelector from "./QuantitySelector";
 import { useState } from "react";
 import { useCartContext } from "@/context/CartContext";
-import { handleAddToCart } from "./handleAddToCart";
+import { handleAddToCart } from "../utils/handleAddToCart";
 
 const RenderSingleProduct: React.FC<ProductsContextType> = ({
   productsData,

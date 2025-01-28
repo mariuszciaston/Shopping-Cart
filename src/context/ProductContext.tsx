@@ -1,4 +1,4 @@
-import { ProductsContextType } from "@/types";
+import { ProductsContextType } from "@/types/types";
 import { createContext, useContext } from "react";
 
 export const ProductsContext = createContext<ProductsContextType | null>(null);

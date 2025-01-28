@@ -1,5 +1,5 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import routes from "./routes";
+import routes from "./routes/routes";
 import useProductsData from "@/hooks/useProductsData";
 import { ProductsContext } from "./context/ProductContext";
 import { CartContext } from "./context/CartContext";

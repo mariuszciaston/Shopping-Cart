@@ -1,8 +1,8 @@
-import Home from "./pages/Home.tsx";
-import Products from "./pages/Products.tsx";
-import ProductPage from "./pages/ProductPage.tsx";
-import Cart from "./pages/Cart";
-import ErrorPage from "./pages/ErrorPage.tsx";
+import Home from "../pages/Home";
+import Products from "../pages/Products";
+import ProductPage from "../pages/ProductPage";
+import Cart from "../pages/Cart";
+import ErrorPage from "../pages/ErrorPage";
 
 const router = [
   {

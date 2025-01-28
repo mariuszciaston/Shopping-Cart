@@ -1,11 +1,10 @@
-import { CartItem } from "@/types";
-import { Dispatch, SetStateAction } from "react";
+import { AddToCartHandler } from "@/types/types";
 
-export const handleAddToCart = (
-  id: CartItem["id"],
-  quantity: CartItem["quantity"],
-  itemsInCart: CartItem[],
-  setItemsInCart: Dispatch<SetStateAction<CartItem[]>>,
+export const handleAddToCart: AddToCartHandler = (
+  id,
+  quantity,
+  itemsInCart,
+  setItemsInCart,
 ) => {
   const existingItemIndex = itemsInCart.findIndex((item) => item.id === id);
 

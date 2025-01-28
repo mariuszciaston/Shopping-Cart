@@ -1,4 +1,4 @@
-import { ProductsContextType } from "@/types";
+import { ProductsContextType } from "@/types/types";
 import { Link } from "react-router-dom";
 
 const RenderMultipleProducts: React.FC<ProductsContextType> = ({
