@@ -1,4 +1,4 @@
-export type ProductTypes = {
+export type Product = {
   id: number;
   image: string;
   title: string;
@@ -6,9 +6,9 @@ export type ProductTypes = {
   description: string;
 };
 
-export type ProductsContextType = {
-  productsData: ProductTypes[] | null;
-  error: null;
+export type ProductState = {
+  productsData: Product[] | null;
+  error: string | null;
   loading: boolean;
 };
 
@@ -22,14 +22,19 @@ export type CartItem = {
   quantity: number;
 };
 
-export type CartContextType = {
+export type CartState = {
   itemsInCart: CartItem[];
   setItemsInCart: React.Dispatch<React.SetStateAction<CartItem[]>>;
 };
 
-export type AddToCartHandler = (
+export type UpdateCart = (
   id: CartItem["id"],
   quantity: CartItem["quantity"],
-  itemsInCart: CartItem[],
-  setItemsInCart: React.Dispatch<React.SetStateAction<CartItem[]>>,
+  itemsInCart: CartState["itemsInCart"],
+  setItemsInCart: CartState["setItemsInCart"],
 ) => void;
+
+export type ShoppingCart = {
+  productsData: Product[] | null;
+  itemsInCart: CartItem[];
+};

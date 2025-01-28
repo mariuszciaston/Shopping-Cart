@@ -1,29 +1,25 @@
-import Header from "../components/Header";
-import Main from "../components/Main";
-import Footer from "../components/Footer";
-import Wrapper from "@/components/Wrapper";
-
+import Header from "../components/layouts/Header";
+import Main from "../components/layouts/Main";
+import Footer from "../components/layouts/Footer";
+import Wrapper from "@/components/ui/Wrapper";
 import { useParams } from "react-router-dom";
 import ErrorPage from "./ErrorPage";
-
 import { useProductsContext } from "@/context/ProductContext";
-import RenderSingleProduct from "@/components/RenderSingleProduct";
-import { ProductTypes } from "@/types/types";
+import RenderSingleProduct from "@/components/product/RenderSingleProduct";
+import { Product } from "@/types/types";
 
-function ProductPage() {
+const ProductPage = () => {
   const { productsData, error, loading } = useProductsContext();
-
   const { name } = useParams();
 
-  if (!name || Number(name) > 20 || Number(name) < 1) {
-    return <ErrorPage />;
-  }
+  const isValidName = name && Number(name) >= 1 && Number(name) <= 20;
 
-  const filteredProductData = productsData
-    ? productsData.filter(
-        (product: ProductTypes) => product.id === Number(name),
-      )
-    : [];
+  if (!isValidName) return <ErrorPage />;
+
+  const filteredProductData =
+    productsData?.filter(
+      (product: Product) => product.id === Number(name),
+    ) || [];
 
   return (
     <Wrapper>
@@ -35,10 +31,9 @@ function ProductPage() {
           loading={loading}
         />
       </Main>
-
       <Footer />
     </Wrapper>
   );
-}
+};
 
 export default ProductPage;

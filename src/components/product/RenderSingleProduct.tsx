@@ -1,11 +1,11 @@
-import { ProductsContextType } from "@/types/types";
-import { Button } from "./Button";
-import QuantitySelector from "./QuantitySelector";
+import { ProductState } from "@/types/types";
+import { Button } from "../ui/Button";
+import QuantitySelector from "../ui/QuantitySelector";
 import { useState } from "react";
 import { useCartContext } from "@/context/CartContext";
-import { handleAddToCart } from "../utils/handleAddToCart";
+import { handleAddToCart } from "../../utils/handleAddToCart";
 
-const RenderSingleProduct: React.FC<ProductsContextType> = ({
+const RenderSingleProduct: React.FC<ProductState> = ({
   productsData,
   error,
   loading,
@@ -13,14 +13,14 @@ const RenderSingleProduct: React.FC<ProductsContextType> = ({
   const [quantity, setQuantity] = useState(1);
   const { itemsInCart, setItemsInCart } = useCartContext();
 
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>A network error was encountered</p>;
+
   return (
     <>
-      {loading && <p>Loading...</p>}
-      {error && <p>A network error was encountered</p>}
-
       {productsData &&
         productsData.map((product) => (
-          <div
+          <section
             key={product.id}
             className="grid grid-cols-[repeat(auto-fit,minmax(240px,1fr))] gap-8 rounded-md bg-white p-8 shadow-md"
           >
@@ -51,7 +51,7 @@ const RenderSingleProduct: React.FC<ProductsContextType> = ({
                 Add to cart
               </Button>
             </div>
-          </div>
+          </section>
         ))}
     </>
   );

@@ -1,24 +1,18 @@
-import { AddToCartHandler } from "@/types/types";
+import { UpdateCart } from "@/types/types";
 
-export const handleAddToCart: AddToCartHandler = (
+export const handleAddToCart: UpdateCart = (
   id,
   quantity,
   itemsInCart,
   setItemsInCart,
 ) => {
-  const existingItemIndex = itemsInCart.findIndex((item) => item.id === id);
+  const updatedCart = itemsInCart.map((item) =>
+    item.id === id ? { ...item, quantity: item.quantity + quantity } : item,
+  );
 
-  if (existingItemIndex !== -1) {
-    const updatedCart = [...itemsInCart];
-    updatedCart[existingItemIndex].quantity += quantity;
-    setItemsInCart(updatedCart);
-  } else {
-    setItemsInCart([
-      ...itemsInCart,
-      {
-        id: id,
-        quantity: quantity,
-      },
-    ]);
+  if (!itemsInCart.some((item) => item.id === id)) {
+    updatedCart.push({ id, quantity });
   }
+
+  setItemsInCart(updatedCart);
 };

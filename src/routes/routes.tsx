@@ -4,7 +4,7 @@ import ProductPage from "../pages/ProductPage";
 import Cart from "../pages/Cart";
 import ErrorPage from "../pages/ErrorPage";
 
-const router = [
+const routes = [
   {
     path: "/",
     element: <Home />,
@@ -24,4 +24,4 @@ const router = [
   },
 ];
 
-export default router;
+export default routes;

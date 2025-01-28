@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
-import { ProductTypes } from "@/types/types";
+import { Product } from "@/types/types";
 
 const useProductsData = () => {
-  const [productsData, setProductsData] = useState<ProductTypes[] | null>(null);
+  const [productsData, setProductsData] = useState<Product[] | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
 
@@ -16,7 +16,7 @@ const useProductsData = () => {
         if (!response.ok) {
           throw new Error("Server error");
         }
-        const data: ProductTypes[] = await response.json();
+        const data: Product[] = await response.json();
         setProductsData(data);
       } catch (err) {
         setError((err as Error).message);
