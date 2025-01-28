@@ -1,22 +1,31 @@
-import { ProductTypes } from "@/types/types";
 import { useState, useEffect } from "react";
+import { ProductTypes } from "@/types/types";
 
 const useProductsData = () => {
   const [productsData, setProductsData] = useState<ProductTypes[] | null>(null);
-  const [error, setError] = useState(null);
+  const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("https://fakestoreapi.com/products", { mode: "cors" })
-      .then((response) => {
-        if (response.status >= 400) {
-          throw new Error("server error");
+    const fetchData = async () => {
+      setLoading(true);
+      try {
+        const response = await fetch("https://fakestoreapi.com/products", {
+          mode: "cors",
+        });
+        if (!response.ok) {
+          throw new Error("Server error");
         }
-        return response.json();
-      })
-      .then((response) => setProductsData(response))
-      .catch((error) => setError(error))
-      .finally(() => setLoading(false));
+        const data: ProductTypes[] = await response.json();
+        setProductsData(data);
+      } catch (err) {
+        setError((err as Error).message);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData();
   }, []);
 
   return { productsData, error, loading };
