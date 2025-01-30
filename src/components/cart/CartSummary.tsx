@@ -6,7 +6,7 @@ function CartSummary({ productsData, itemsInCart }: ShoppingCart) {
     <>
       <div className="flex justify-between">
         <div className="text-lg font-bold">Total &nbsp;</div>
-        <div className="text-lg font-bold">
+        <div className="text-lg font-bold" data-testid="total-amount">
           $
           {itemsInCart
             .reduce(

@@ -32,10 +32,16 @@ const QuantitySelector: React.FC<QuantitySelectorProps> = ({
 
   return (
     <div className="flex gap-2">
-      <Button className="text-lg" variant="outline" onClick={handleDecrement}>
+      <Button
+        data-testid="quantity-lower"
+        className="text-lg"
+        variant="outline"
+        onClick={handleDecrement}
+      >
         -
       </Button>
       <Input
+        data-testid="quantity-input"
         className="m-none w-[4rem] pr-0 text-center"
         type="number"
         min="1"
@@ -43,7 +49,12 @@ const QuantitySelector: React.FC<QuantitySelectorProps> = ({
         value={quantity}
         onChange={handleInputChange}
       />
-      <Button className="text-lg" variant="outline" onClick={handleIncrement}>
+      <Button
+        data-testid="quantity-boost"
+        className="text-lg"
+        variant="outline"
+        onClick={handleIncrement}
+      >
         +
       </Button>
     </div>

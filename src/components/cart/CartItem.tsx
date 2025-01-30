@@ -20,7 +20,10 @@ function CartItem({ product }: { product: Product }) {
 
         <Link to={`/products/${product.id}`}>
           <p className="flex flex-col">
-            <span className="font-bold">{product.title}</span>${product.price}
+            <span data-testid="product-title" className="font-bold">
+              {product.title}
+            </span>
+            <span data-testid="product-price">${product.price}</span>
           </p>
         </Link>
       </div>
@@ -41,6 +44,7 @@ function CartItem({ product }: { product: Product }) {
         />
 
         <Trash2
+          data-testid="remove-item"
           className="cursor-pointer hover:text-red-500"
           onClick={() => {
             const updatedCart = itemsInCart.filter(
@@ -50,7 +54,7 @@ function CartItem({ product }: { product: Product }) {
           }}
         />
 
-        <p className="flex flex-1 justify-end">
+        <p className="flex flex-1 justify-end" data-testid="sum">
           $
           {(
             (itemsInCart.find((item) => item.id === product.id)?.quantity ??
