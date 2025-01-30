@@ -7,7 +7,7 @@ const Brand = () => (
   <h1 className="text-3xl font-bold">
     <Link to="/" className="rounded-md border-2 border-black">
       <span className="bg-black text-white">&nbsp;fake&nbsp;</span>
-      &nbsp;STORE&nbsp;
+      <span>&nbsp;STORE&nbsp;</span>
     </Link>
   </h1>
 );
@@ -22,7 +22,7 @@ const Navigation = ({ itemsInCart }: { itemsInCart: CartItem[] }) => (
         <Link to="/products">Products</Link>
       </li>
       <li>
-        <Link to="/cart">
+        <Link to="/cart" data-testid="cart-link">
           <CartIcon itemsInCart={itemsInCart} />
         </Link>
       </li>
@@ -34,7 +34,10 @@ const CartIcon = ({ itemsInCart }: { itemsInCart: CartItem[] }) => (
   <div className="relative">
     <ShoppingBasket className="h-8 w-8" />
     {itemsInCart.length > 0 && (
-      <span className="absolute -bottom-1 -right-1 flex h-5 min-w-5 items-center justify-center rounded-full bg-red-500 text-xs text-white">
+      <span
+        data-testid="cart-item-count"
+        className="absolute -bottom-1 -right-1 flex h-5 min-w-5 items-center justify-center rounded-full bg-red-500 text-xs text-white"
+      >
         {itemsInCart.reduce((acc, item) => acc + item.quantity, 0)}
       </span>
     )}
