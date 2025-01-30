@@ -103,4 +103,13 @@ describe("CartItem component", () => {
 
     expect(screen.getByTestId("sum")).toHaveTextContent("$59.97");
   });
+
+  it("matches snapshot", () => {
+    const { asFragment } = render(
+      <BrowserRouter>
+        <CartItem product={product} />
+      </BrowserRouter>,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
 });

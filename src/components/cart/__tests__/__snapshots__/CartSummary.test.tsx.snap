@@ -1,0 +1,26 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`CartSummary component > matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="flex justify-between"
+  >
+    <div
+      class="text-lg font-bold"
+    >
+      Total  
+    </div>
+    <div
+      class="text-lg font-bold"
+      data-testid="total-amount"
+    >
+      $40.44
+    </div>
+  </div>
+  <button
+    class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 text-primary-foreground shadow h-9 mx-auto bg-blue-500 px-8 py-6 text-lg font-bold hover:bg-blue-500"
+  >
+    Checkout
+  </button>
+</DocumentFragment>
+`;

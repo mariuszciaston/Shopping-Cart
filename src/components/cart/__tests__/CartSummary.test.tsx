@@ -95,4 +95,10 @@ describe("CartSummary component", () => {
       "Congratulations! You successfully bought the products.",
     );
   });
+  it("matches snapshot", () => {
+    const { asFragment } = render(
+      <CartSummary productsData={productsData} itemsInCart={itemsInCart} />,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
 });
