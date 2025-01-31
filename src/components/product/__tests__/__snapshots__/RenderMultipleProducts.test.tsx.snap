@@ -1,0 +1,54 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`RenderMultipleProducts > matches snapshot 1`] = `
+<DocumentFragment>
+  <section
+    class="grid grid-cols-[repeat(auto-fill,minmax(240px,1fr))] content-start gap-4 sm:gap-8"
+  >
+    <a
+      data-discover="true"
+      href="/products/1"
+    >
+      <div
+        class="flex h-full flex-col gap-4 rounded-md bg-white p-4 shadow-md"
+      >
+        <img
+          alt="Product 1"
+          class="aspect-square bg-white object-contain"
+          src="image1.jpg"
+        />
+        <h2
+          class="font-bold"
+        >
+          Product 1
+        </h2>
+        <p>
+          $100
+        </p>
+      </div>
+    </a>
+    <a
+      data-discover="true"
+      href="/products/2"
+    >
+      <div
+        class="flex h-full flex-col gap-4 rounded-md bg-white p-4 shadow-md"
+      >
+        <img
+          alt="Product 2"
+          class="aspect-square bg-white object-contain"
+          src="image2.jpg"
+        />
+        <h2
+          class="font-bold"
+        >
+          Product 2
+        </h2>
+        <p>
+          $200
+        </p>
+      </div>
+    </a>
+  </section>
+</DocumentFragment>
+`;
