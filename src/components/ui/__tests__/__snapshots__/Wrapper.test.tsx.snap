@@ -12,16 +12,3 @@ exports[`Wrapper Component > matches the snapshot 1`] = `
   </div>
 </DocumentFragment>
 `;
-
-exports[`matches the snapshot 1`] = `
-<DocumentFragment>
-  <div
-    class="flex h-[calc(100vh)] flex-col"
-    id="wrapper"
-  >
-    <div>
-      Test Child
-    </div>
-  </div>
-</DocumentFragment>
-`;
