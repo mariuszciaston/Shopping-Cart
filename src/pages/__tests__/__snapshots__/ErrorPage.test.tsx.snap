@@ -1,0 +1,21 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="flex h-screen flex-col items-center justify-center"
+  >
+    <p>
+      This page doesn't exist.
+    </p>
+    <br />
+    <a
+      class="font-bold"
+      data-discover="true"
+      href="/"
+    >
+      Go back to the home page!
+    </a>
+  </div>
+</DocumentFragment>
+`;
