@@ -43,7 +43,7 @@ describe("RenderSingleProduct", () => {
       <RenderSingleProduct
         productsData={[]}
         loading={false}
-        error={"error message"}
+        error={"A network error was encountered"}
       />,
     );
     expect(
