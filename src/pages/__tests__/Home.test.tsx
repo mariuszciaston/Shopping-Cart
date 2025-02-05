@@ -83,9 +83,14 @@ describe("Home Component", () => {
     ).toBeInTheDocument();
   });
 
-  it("displays featured products", () => {
+  it("renders hero section", () => {
     renderHome({ productsData: mockProductsData, error: null, loading: false });
     expect(screen.getByText("Your Ultimate Shopping Hub")).toBeInTheDocument();
+  });
+
+  it("displays featured items", () => {
+    renderHome({ productsData: mockProductsData, error: null, loading: false });
+    expect(screen.getByText("Featured Items")).toBeInTheDocument();
     expect(screen.getByText("Product 1")).toBeInTheDocument();
     expect(screen.getByText("Product 2")).toBeInTheDocument();
     expect(screen.getByText("Product 3")).toBeInTheDocument();
