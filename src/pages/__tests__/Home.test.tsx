@@ -59,7 +59,7 @@ const renderHome = (contextValue: ProductState | null) => {
   );
 };
 
-describe("Home Component", () => {
+describe("Home page component", () => {
   it("renders header, main, and footer components", () => {
     renderHome({ productsData: [], error: null, loading: false });
     expect(screen.getByRole("banner")).toBeInTheDocument();
