@@ -13,8 +13,9 @@ const RenderSingleProduct: React.FC<ProductState> = ({
   const [quantity, setQuantity] = useState(1);
   const { itemsInCart, setItemsInCart } = useCartContext();
 
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>A network error was encountered</p>;
+  if (loading) return <p className="px-4 sm:p-0">Loading...</p>;
+  if (error)
+    return <p className="px-4 sm:p-0">A network error was encountered</p>;
 
   return (
     <>

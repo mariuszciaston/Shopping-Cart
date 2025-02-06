@@ -6,8 +6,9 @@ const RenderMultipleProducts: React.FC<ProductState> = ({
   error,
   loading,
 }) => {
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>A network error was encountered</p>;
+  if (loading) return <p className="px-4 sm:p-0">Loading...</p>;
+  if (error)
+    return <p className="px-4 sm:p-0">A network error was encountered</p>;
 
   return (
     <section className="grid grid-cols-[repeat(auto-fill,minmax(240px,1fr))] content-start gap-4 sm:gap-8">
