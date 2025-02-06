@@ -16,18 +16,21 @@ const Cart = () => {
       <Header />
       <Main>
         <div className="flex flex-col gap-8 rounded-md bg-white p-4 shadow-md sm:p-8">
-          {loading && <p>Loading...</p>}
-          {error && <p>A network error was encountered</p>}
-
           {itemsInCart.length === 0 ? (
             <div>Cart is empty</div>
           ) : (
-            productsData &&
-            productsData
-              .filter((product) =>
-                itemsInCart.some((item) => item.id === product.id),
-              )
-              .map((product) => <CartItem key={product.id} product={product} />)
+            <>
+              {loading && <p>Loading...</p>}
+              {error && <p>A network error was encountered</p>}
+              {productsData &&
+                productsData
+                  .filter((product) =>
+                    itemsInCart.some((item) => item.id === product.id),
+                  )
+                  .map((product) => (
+                    <CartItem key={product.id} product={product} />
+                  ))}
+            </>
           )}
 
           <hr />
