@@ -1,0 +1,133 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Products Component > matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="flex h-[calc(100vh)] flex-col"
+    id="wrapper"
+  >
+    <header
+      class="mx-auto flex w-full max-w-[1280px] flex-wrap items-center justify-between gap-4 p-4 sm:gap-8 sm:p-8"
+    >
+      <h1
+        class="text-3xl font-bold"
+      >
+        <a
+          class="rounded-md border-2 border-black"
+          data-discover="true"
+          href="/"
+        >
+          <span
+            class="bg-black text-white"
+          >
+             fake 
+          </span>
+          <span>
+             STORE 
+          </span>
+        </a>
+      </h1>
+      <nav
+        class="order-0 sm:order-0 md:order-2"
+      >
+        <ul
+          class="flex items-center gap-8"
+        >
+          <li>
+            <a
+              data-discover="true"
+              href="/"
+            >
+              Home
+            </a>
+          </li>
+          <li>
+            <a
+              data-discover="true"
+              href="/products"
+            >
+              Products
+            </a>
+          </li>
+          <li>
+            <a
+              data-discover="true"
+              data-testid="cart-link"
+              href="/cart"
+            >
+              <div
+                class="relative"
+              >
+                <svg
+                  class="lucide lucide-shopping-basket h-8 w-8"
+                  fill="none"
+                  height="24"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="m15 11-1 9"
+                  />
+                  <path
+                    d="m19 11-4-7"
+                  />
+                  <path
+                    d="M2 11h20"
+                  />
+                  <path
+                    d="m3.5 11 1.6 7.4a2 2 0 0 0 2 1.6h9.8a2 2 0 0 0 2-1.6l1.7-7.4"
+                  />
+                  <path
+                    d="M4.5 15.5h15"
+                  />
+                  <path
+                    d="m5 11 4-7"
+                  />
+                  <path
+                    d="m9 11 1 9"
+                  />
+                </svg>
+                <span
+                  class="absolute -bottom-1 -right-1 flex h-5 min-w-5 items-center justify-center rounded-full bg-red-500 text-xs text-white"
+                  data-testid="cart-item-count"
+                >
+                  1
+                </span>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main
+      class="flex-1 bg-gray-100"
+    >
+      <div
+        class="mx-auto grid h-full w-full max-w-[1280px] content-start py-8 sm:p-8"
+      />
+    </main>
+    <footer
+      class="mx-auto flex w-full max-w-[1280px] items-center justify-center p-4 text-sm sm:p-8"
+    >
+      <span>
+        Mariusz Ciastoń 2025  
+      </span>
+      <a
+        href="https://github.com/mariuszciaston/"
+        rel="noopener"
+        target="_blank"
+      >
+        <i
+          aria-hidden="true"
+          class="fab fa-github fa-2x transition-transform duration-500 ease-in-out hover:rotate-1turn hover:scale-125 hover:transform"
+        />
+      </a>
+    </footer>
+  </div>
+</DocumentFragment>
+`;
