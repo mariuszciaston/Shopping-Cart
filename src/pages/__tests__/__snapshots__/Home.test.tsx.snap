@@ -1,6 +1,6 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Home Component > matches snapshot 1`] = `
+exports[`Home page component > matches snapshot 1`] = `
 <DocumentFragment>
   <div
     class="flex h-[calc(100vh)] flex-col"
